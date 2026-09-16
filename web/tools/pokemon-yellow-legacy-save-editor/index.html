@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mario Tennis Save Patcher · Erick Takeshi</title>
+    <title>Pokémon Yellow Legacy Save Editor · Erick Takeshi</title>
 
     <!-- Icons & PWA -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -18,38 +18,32 @@
     <meta name="msapplication-TileImage" content="https://cdn.ericktakeshi.com.br/assets/icon-192.png" />
 
     <!-- SEO -->
-    <link rel="canonical" href="https://www.ericktakeshi.com.br/tools/mario-tennis-save-patcher/" />
+    <link rel="canonical" href="https://www.ericktakeshi.com.br/tools/pokemon-yellow-legacy-save-editor/" />
     <meta
       name="description"
-      content="Unlock Yoshi, Wario, Waluigi, Bowser and the four N64 minigames in Mario Tennis (Game Boy Color) by patching your .sav file. Runs entirely in your browser. Nothing is uploaded."
+      content="Edit your Pokémon Yellow Legacy save in the browser: trainer name, ID, money, Game Corner coins, gym badges and Fly destinations. The checksum is repaired for you. Nothing is uploaded."
     />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Mario Tennis Save Patcher · Erick Takeshi" />
+    <meta property="og:title" content="Pokémon Yellow Legacy Save Editor · Erick Takeshi" />
     <meta property="og:site_name" content="Erick Takeshi" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="pt_BR" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.ericktakeshi.com.br/tools/mario-tennis-save-patcher/" />
-    <meta
-      property="og:description"
-      content="Unlock the N64 Transfer Pak content in Mario Tennis (GBC) from your save file alone. No upload, no server."
-    />
-    <meta property="og:image" content="https://cdn.ericktakeshi.com.br/assets/og-mario-tennis-save-patcher.png" />
+    <meta property="og:url" content="https://www.ericktakeshi.com.br/tools/pokemon-yellow-legacy-save-editor/" />
+    <meta property="og:description" content="A browser save editor built for the Yellow Legacy romhack, not for vanilla Gen 1. No upload, no server." />
+    <meta property="og:image" content="https://cdn.ericktakeshi.com.br/assets/og-pokemon-yellow-legacy-save-editor.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Mario Tennis (Game Boy Color) box art beside Yoshi, Wario, Waluigi and Bowser sprites" />
+    <meta property="og:image:alt" content="Pokémon Yellow Legacy title screen beside the save editor's trainer fields" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mario Tennis Save Patcher · Erick Takeshi" />
-    <meta
-      name="twitter:description"
-      content="Unlock the N64 Transfer Pak content in Mario Tennis (GBC) from your save file alone. No upload, no server."
-    />
-    <meta name="twitter:image" content="https://cdn.ericktakeshi.com.br/assets/og-mario-tennis-save-patcher.png" />
-    <meta name="twitter:image:alt" content="Mario Tennis (Game Boy Color) box art beside Yoshi, Wario, Waluigi and Bowser sprites" />
+    <meta name="twitter:title" content="Pokémon Yellow Legacy Save Editor · Erick Takeshi" />
+    <meta name="twitter:description" content="A browser save editor built for the Yellow Legacy romhack, not for vanilla Gen 1. No upload, no server." />
+    <meta name="twitter:image" content="https://cdn.ericktakeshi.com.br/assets/og-pokemon-yellow-legacy-save-editor.png" />
+    <meta name="twitter:image:alt" content="Pokémon Yellow Legacy title screen beside the save editor's trainer fields" />
     <meta name="twitter:creator" content="@erick_tmr" />
 
     <link rel="preconnect" href="https://cdn.ericktakeshi.com.br" crossorigin />
@@ -66,11 +60,10 @@
   <body>
     <!-- Ambient background layers -->
     <div class="bg-scanlines" aria-hidden="true"></div>
-    <div class="bg-glow" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--gold" aria-hidden="true"></div>
     <div class="bg-grid" aria-hidden="true"></div>
 
     <div class="page">
-      <!-- HEADER -->
       <header class="site-header">
         <div class="site-header__inner">
           <div class="site-header__left">
@@ -220,165 +213,191 @@
         <nav class="crumbs" aria-label="Breadcrumb">
           <a href="/tools/">cool tools</a>
           <span aria-hidden="true">/</span>
-          <span class="crumbs__here" aria-current="page">mario-tennis-save-patcher</span>
+          <span class="crumbs__here" aria-current="page">yellow-legacy-save-editor</span>
         </nav>
 
         <!-- HERO -->
         <section class="tool-hero">
           <div class="tool-hero__info">
-            <div class="eyebrow eyebrow--lime">● TOOL 01 · GAME BOY COLOR</div>
-            <h1 class="tool-hero__title">MARIO TENNIS<br /><span class="accent-lime">SAVE PATCHER</span></h1>
-            <p class="tool-hero__lead" data-i18n="mtHeroLead">
-              Mario Tennis (GBC, 2001) hides Yoshi, Wario, Waluigi, Bowser and four minigames behind a Transfer Pak
-              session with the N64 game. Nintendo never patched that out. This tool writes those
-              unlock bytes straight into your save file, no N64 required.
+            <div class="eyebrow eyebrow--gold">● TOOL 02 · GAME BOY</div>
+            <h1 class="tool-hero__title">YELLOW LEGACY<br /><span class="accent-gold">SAVE EDITOR</span></h1>
+            <p class="tool-hero__lead" data-i18n="ylHeroLead">
+              A browser save editor for Pokémon Yellow Legacy, covering the trainer block: your name, trainer ID,
+              money, Game Corner coins, gym badges and the towns Fly can reach. Drop a save in, change what you need,
+              download it back. The checksum is repaired for you.
             </p>
             <p class="privacy">
               <span class="privacy__badge" aria-hidden="true">!</span>
-              <span data-i18n="mtPrivacy">
+              <span data-i18n="ylPrivacy">
                 Your save never leaves this tab. Everything runs in your browser, no upload, no server.
               </span>
             </p>
           </div>
           <div class="tool-hero__art">
-            <div class="cartridge cartridge--tennis" aria-hidden="true">
+            <div class="cartridge cartridge--yellow" aria-hidden="true">
               <div class="cartridge__notch"></div>
               <div class="cartridge__screen">
-                <img src="https://cdn.ericktakeshi.com.br/assets/mario-tennis-cover.png" alt="" />
+                <img src="https://cdn.ericktakeshi.com.br/assets/yellow-legacy-title.png" alt="" />
                 <div class="cartridge__scan"></div>
               </div>
-              <div class="cartridge__label">CGB-BM8E-USA</div>
+              <div class="cartridge__label">DMG-AYWE-USA</div>
             </div>
           </div>
         </section>
 
-        <!-- PATCHER MACHINE -->
+        <!-- EDITOR MACHINE -->
         <section class="machine-row">
           <div class="machine">
             <div class="machine__head">
-              <span class="machine__led" id="mtLed" aria-hidden="true"></span>
-              <span class="machine__name">SAVE PATCHER</span>
-              <span class="machine__status" id="mtStatus">WAITING FOR FILE</span>
+              <span class="machine__led" id="ylLed" aria-hidden="true"></span>
+              <span class="machine__name">SAVE EDITOR</span>
+              <span class="machine__status" id="ylStatus">WAITING FOR FILE</span>
             </div>
 
             <div class="machine__body">
               <!-- Live regions: present from first paint and empty, so a screen
                    reader announces content the moment it is inserted. -->
-              <div id="mtAlert" role="alert"></div>
-              <div id="mtSuccess" role="status"></div>
+              <div id="ylAlert" role="alert"></div>
+              <div id="ylSuccess" role="status"></div>
 
               <!-- DROPZONE -->
-              <div id="mtEmpty">
-                <label class="sr-only" for="mtFile" data-i18n="mtDropLabel">
-                  Choose a Mario Tennis save file, or drop one here
+              <div id="ylEmpty">
+                <label class="sr-only" for="ylFile" data-i18n="ylDropLabel">
+                  Choose a Pokémon Yellow Legacy save file, or drop one here
                 </label>
-                <input class="sr-only" type="file" id="mtFile" accept=".sav" />
-                <button type="button" class="dropzone" id="mtDropzone">
+                <input class="sr-only" type="file" id="ylFile" accept=".sav" />
+                <button type="button" class="dropzone dropzone--gold" id="ylDropzone">
                   <span class="dropzone__cart" aria-hidden="true"><span class="dropzone__cart-screen"></span></span>
-                  <span class="dropzone__title" data-i18n="mtDropTitle">DROP YOUR .SAV HERE</span>
-                  <span class="dropzone__hint" data-i18n="mtDropHint">
-                    A raw 32,768-byte SRAM dump from Mario Tennis (USA). Nothing is uploaded.
+                  <span class="dropzone__title" data-i18n="ylDropTitle">DROP YOUR .SAV HERE</span>
+                  <span class="dropzone__hint" data-i18n="ylDropHint">
+                    A raw 32,768-byte save from Pokémon Yellow Legacy. Nothing is uploaded.
                   </span>
-                  <span class="dropzone__cta" data-i18n="mtDropButton">Choose a file</span>
+                  <span class="dropzone__cta" data-i18n="ylDropButton">Choose a file</span>
                 </button>
               </div>
 
-              <!-- INSPECTOR -->
-              <div id="mtLoaded" hidden>
+              <!-- EDITOR -->
+              <div id="ylLoaded" hidden>
                 <div class="inspector__head">
-                  <h2 class="inspector__title" data-i18n="mtInspector">SAVE INSPECTOR</h2>
+                  <h2 class="inspector__title" data-i18n="ylPlayerData">PLAYER DATA</h2>
                   <span class="inspector__spacer"></span>
-                  <span class="inspector__file" id="mtFileName"></span>
+                  <span class="inspector__file" id="ylFileName"></span>
                   <span class="inspector__size">32 KiB</span>
                 </div>
 
-                <div class="readout">
-                  <div class="readout__state">
-                    <span class="readout__label" data-i18n="mtStateLabel">STATE</span>
-                    <span class="readout__pill" id="mtStateText"></span>
-                    <span class="readout__note" id="mtStateNote"></span>
+                <!-- TRAINER FIELDS -->
+                <div class="trainer-grid">
+                  <div class="field">
+                    <label class="field__label" for="ylName" data-i18n="ylFieldName">TRAINER NAME (OT)</label>
+                    <input class="field__input" type="text" id="ylName" maxlength="10" spellcheck="false"
+                      autocomplete="off" />
+                    <span class="field__hint" id="ylNameHint"></span>
                   </div>
 
-                  <div class="readout__cells">
-                    <div class="cell">
-                      <div class="cell__label" data-i18n="mtPlayersLabel">PROFILES</div>
-                      <div class="cell__value accent-lime" id="mtPlayers">-</div>
-                    </div>
-                    <div class="cell">
-                      <div class="cell__label" data-i18n="mtCounterLabel">SAVE COUNT</div>
-                      <div class="cell__value" id="mtCounter">-</div>
-                    </div>
-                    <div class="cell">
-                      <div class="cell__label" data-i18n="mtChecksumLabel">CHECKSUMS</div>
-                      <div class="cell__value" id="mtChecksum">-</div>
-                    </div>
+                  <div class="field">
+                    <label class="field__label" for="ylId" data-i18n="ylFieldId">TRAINER ID</label>
+                    <span class="field__row">
+                      <input class="field__input" type="number" id="ylId" min="0" max="65535" inputmode="numeric" />
+                      <button type="button" class="field__roll" id="ylRollId" data-i18n="ylRollId"
+                        data-i18n-attr="title" title="Roll a random ID">
+                        <!-- a die, drawn rather than typed: JetBrains Mono has no
+                             dice glyph and the character renders as tofu. -->
+                        <svg class="field__roll-die" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                          <rect x="1.5" y="1.5" width="13" height="13" rx="3" />
+                          <circle cx="5" cy="5" r="1.4" />
+                          <circle cx="11" cy="5" r="1.4" />
+                          <circle cx="8" cy="8" r="1.4" />
+                          <circle cx="5" cy="11" r="1.4" />
+                          <circle cx="11" cy="11" r="1.4" />
+                        </svg>
+                        <span class="sr-only" data-i18n="ylRollId">Roll a random ID</span>
+                      </button>
+                    </span>
+                    <span class="field__hint" data-i18n="ylIdHint">0 – 65535 · shown as the ID on your trainer card</span>
+                  </div>
+
+                  <div class="field">
+                    <label class="field__label" for="ylMoney" data-i18n="ylFieldMoney">MONEY (₽)</label>
+                    <input class="field__input" type="number" id="ylMoney" min="0" max="999999" inputmode="numeric" />
+                    <span class="field__hint" data-i18n="ylMoneyHint">max 999,999</span>
+                  </div>
+
+                  <div class="field">
+                    <label class="field__label" for="ylCoins" data-i18n="ylFieldCoins">GAME CORNER COINS</label>
+                    <input class="field__input" type="number" id="ylCoins" min="0" max="9999" inputmode="numeric" />
+                    <span class="field__hint" data-i18n="ylCoinsHint">max 9,999</span>
                   </div>
                 </div>
 
-                <!-- CHECKSUM AUDIT -->
-                <div class="audit">
-                  <button
-                    type="button"
-                    class="audit__toggle"
-                    id="mtAuditToggle"
-                    aria-expanded="false"
-                    aria-controls="mtAuditPanel"
-                  >
-                    <span class="audit__caret" id="mtAuditCaret" aria-hidden="true">▸</span>
-                    <span data-i18n="mtAuditToggle">Checksum audit: stored vs computed</span>
-                    <span class="audit__count" id="mtAuditCount"></span>
-                  </button>
-                  <div class="audit__panel" id="mtAuditPanel" hidden>
-                    <div class="audit__scroll">
-                      <table class="audit__table">
-                        <caption class="sr-only" data-i18n="mtAuditCaption">
-                          Directory records in both save halves, with stored and recomputed checksums.
-                        </caption>
-                        <colgroup>
-                          <col style="width: 58px" />
-                          <col style="width: 62px" />
-                          <col style="width: 62px" />
-                          <col style="width: 62px" />
-                          <col style="width: 74px" />
-                          <col style="width: 74px" />
-                          <col style="width: 44px" />
-                        </colgroup>
-                        <thead>
-                          <tr>
-                            <th scope="col" data-i18n="mtColHalf">HALF</th>
-                            <th scope="col" data-i18n="mtColRec">REC</th>
-                            <th scope="col" data-i18n="mtColAddr">ADDR</th>
-                            <th scope="col" data-i18n="mtColSize">SIZE</th>
-                            <th scope="col" data-i18n="mtColStored">STORED</th>
-                            <th scope="col" data-i18n="mtColComputed">COMPUTED</th>
-                            <th scope="col" data-i18n="mtColOk">OK</th>
-                          </tr>
-                        </thead>
-                        <tbody id="mtAuditBody"></tbody>
-                      </table>
-                    </div>
+                <!-- BADGES -->
+                <div class="toggles">
+                  <div class="toggles__head">
+                    <h3 class="toggles__title accent-gold" data-i18n="ylBadgesTitle">GYM BADGES</h3>
+                    <span class="toggles__count" id="ylBadgeCount"></span>
+                    <span class="toggles__spacer"></span>
+                    <button type="button" class="btn btn--ghost btn--tiny" id="ylBadgeAll" data-i18n="ylAll">All</button>
+                    <button type="button" class="btn btn--ghost btn--tiny btn--ghost-red" id="ylBadgeNone"
+                      data-i18n="ylNone">None</button>
+                  </div>
+                  <!-- chips are built by js/tools/yellow-legacy/editor-ui.js -->
+                  <div class="toggle-grid" id="ylBadgeGrid"></div>
+                </div>
+
+                <!-- FLY -->
+                <div class="toggles">
+                  <div class="toggles__head">
+                    <h3 class="toggles__title accent-blue" data-i18n="ylFlyTitle">FLY DESTINATIONS</h3>
+                    <span class="toggles__count" id="ylTownCount"></span>
+                    <span class="toggles__spacer"></span>
+                    <button type="button" class="btn btn--ghost btn--tiny" id="ylTownAll" data-i18n="ylAll">All</button>
+                    <button type="button" class="btn btn--ghost btn--tiny btn--ghost-red" id="ylTownNone"
+                      data-i18n="ylNone">None</button>
+                  </div>
+                  <div class="toggle-grid" id="ylTownGrid"></div>
+                  <p class="toggles__note" data-i18n="ylFlyNote">
+                    Fly only lists towns you have visited. Ticking a town here makes it selectable on the town map. You
+                    still need the HM and a Pokémon that can learn it.
+                  </p>
+                </div>
+
+                <!-- PENDING CHANGES -->
+                <div class="diff">
+                  <div class="diff__head">
+                    <h3 class="diff__title" data-i18n="ylDiffTitle">PENDING CHANGES</h3>
+                    <span class="diff__count" id="ylDiffCount"></span>
+                  </div>
+                  <div class="diff__panel" id="ylDiffPanel" hidden>
+                    <table class="diff__table">
+                      <caption class="sr-only" data-i18n="ylDiffCaption">
+                        Every field that differs from the loaded file, with the offset it will be written to.
+                      </caption>
+                      <thead>
+                        <tr>
+                          <th scope="col" data-i18n="ylColOffset">OFFSET</th>
+                          <th scope="col" data-i18n="ylColField">FIELD</th>
+                          <th scope="col" data-i18n="ylColChange">CHANGE</th>
+                        </tr>
+                      </thead>
+                      <tbody id="ylDiffBody"></tbody>
+                    </table>
                   </div>
                 </div>
 
                 <!-- ACTIONS -->
                 <div class="actions">
-                  <button type="button" class="btn btn--green" id="mtUnlock">
-                    ▶ <span data-i18n="mtBtnUnlock">UNLOCK N64 CONTENT</span>
+                  <button type="button" class="btn btn--green btn--lift" id="ylDownload">
+                    ↓ <span data-i18n="ylBtnDownload">Download edited save</span>
                   </button>
-                  <button type="button" class="btn btn--outline-red" id="mtRemove" data-i18n="mtBtnRemove">
-                    Remove unlock
+                  <button type="button" class="btn btn--outline-red" id="ylRevert" data-i18n="ylBtnRevert">
+                    Revert changes
                   </button>
                   <span class="actions__spacer"></span>
-                  <button type="button" class="btn btn--quiet" id="mtReset" data-i18n="mtBtnReset">Reset</button>
-                </div>
-                <p class="actions__hint" id="mtActionHint"></p>
-
-                <div class="download" id="mtDownloadRow" hidden>
-                  <button type="button" class="btn btn--green btn--lift" id="mtDownload">
-                    ↓ <span data-i18n="mtBtnDownload">Download patched save</span>
+                  <button type="button" class="btn btn--quiet" id="ylReset" data-i18n="ylBtnAnother">
+                    Load another save
                   </button>
-                  <span class="download__name" id="mtOutName"></span>
                 </div>
+                <p class="actions__hint" id="ylActionHint"></p>
+                <p class="download__name" id="ylOutName"></p>
               </div>
             </div>
           </div>
@@ -387,37 +406,18 @@
           <div class="machine-side">
             <div class="panel">
               <div class="panel__head">
-                <span class="dot dot--square dot--lime dot--glow" aria-hidden="true"></span>
-                <h2 class="panel__title" data-i18n="mtUnlocksTitle">WHAT YOU UNLOCK</h2>
+                <span class="dot dot--square dot--gold dot--glow" aria-hidden="true"></span>
+                <h2 class="panel__title" data-i18n="ylStateTitle">SAVE STATE</h2>
               </div>
-              <div class="roster-list">
-                <div class="roster-list__row">
-                  <span class="roster-list__frame">
-                    <img src="https://cdn.ericktakeshi.com.br/assets/body-yoshi.png" alt="Yoshi" />
-                  </span>
-                  <span class="roster-list__name">YOSHI</span>
+              <div class="readout__cells readout__cells--stack">
+                <div class="cell">
+                  <div class="cell__label" data-i18n="ylChecksumLabel">CHECKSUM</div>
+                  <div class="cell__value" id="ylChecksum">—</div>
+                  <div class="cell__note" id="ylChecksumNote"></div>
                 </div>
-                <div class="roster-list__row">
-                  <span class="roster-list__frame">
-                    <img src="https://cdn.ericktakeshi.com.br/assets/body-wario.png" alt="Wario" />
-                  </span>
-                  <span class="roster-list__name">WARIO</span>
-                </div>
-                <div class="roster-list__row">
-                  <span class="roster-list__frame">
-                    <img src="https://cdn.ericktakeshi.com.br/assets/body-waluigi.png" alt="Waluigi" />
-                  </span>
-                  <span class="roster-list__name">WALUIGI</span>
-                </div>
-                <div class="roster-list__row">
-                  <span class="roster-list__frame">
-                    <img src="https://cdn.ericktakeshi.com.br/assets/body-bowser.png" alt="Bowser" />
-                  </span>
-                  <span class="roster-list__name">BOWSER</span>
-                </div>
-                <div class="roster-list__row roster-list__row--dashed">
-                  <span class="dot dot--square dot--blue" aria-hidden="true"></span>
-                  <span class="roster-list__extra" data-i18n="mtUnlocksMinigames">4 N64 minigames</span>
+                <div class="cell">
+                  <div class="cell__label" data-i18n="ylLoadedLabel">LOADED TRAINER</div>
+                  <div class="cell__value cell__value--text" id="ylLoadedSummary">—</div>
                 </div>
               </div>
             </div>
@@ -425,20 +425,22 @@
             <div class="panel">
               <div class="panel__head">
                 <span class="dot dot--square dot--blue dot--glow" aria-hidden="true"></span>
-                <h2 class="panel__title" data-i18n="mtReqTitle">REQUIREMENTS</h2>
+                <h2 class="panel__title" data-i18n="ylReqTitle">REQUIREMENTS</h2>
               </div>
               <ul class="reqs">
                 <li class="reqs__item">
                   <span class="accent-green" aria-hidden="true">✓</span>
-                  <span data-i18n="mtReq1">Mario Tennis (USA) for Game Boy Color</span>
+                  <span data-i18n="ylReq1">A save from Pokémon Yellow Legacy (any version)</span>
                 </li>
                 <li class="reqs__item">
                   <span class="accent-green" aria-hidden="true">✓</span>
-                  <span data-i18n="mtReq2">A raw .sav file of exactly 32,768 bytes</span>
+                  <span data-i18n="ylReq2">A raw .sav file of exactly 32,768 bytes</span>
                 </li>
                 <li class="reqs__item reqs__item--no">
                   <span class="accent-red" aria-hidden="true">×</span>
-                  <span data-i18n="mtReq3">Not supported: EUR/JPN carts, save states (.st, .sgm), archives</span>
+                  <span data-i18n="ylReq3">
+                    Not supported: vanilla Red/Blue/Yellow, save states (.st, .sgm, .ss1), archives, Gen 2 saves
+                  </span>
                 </li>
               </ul>
             </div>
@@ -448,42 +450,43 @@
         <!-- HOW TO USE -->
         <section class="section">
           <div class="section__head">
-            <span class="eyebrow eyebrow--green" data-i18n="mtHowEyebrow">HOW TO USE ▸ 4 STEPS</span>
+            <span class="eyebrow eyebrow--green" data-i18n="ylHowEyebrow">HOW TO USE ▸ 4 STEPS</span>
             <span class="rule"></span>
           </div>
-          <h2 class="section__title" data-i18n="mtHowTitle">From save file to unlocked roster</h2>
+          <h2 class="section__title" data-i18n="ylHowTitle">From save file to edited trainer</h2>
 
           <div class="steps">
             <div class="step">
-              <div class="step__num accent-lime">01</div>
-              <h3 class="step__title" data-i18n="mtStep1Title">Get your save file</h3>
-              <p class="step__body" data-i18n="mtStep1Body">
-                On an emulator, the .sav sits next to your ROM (mGBA, BGB, SameBoy). On a real cartridge, dump it with
-                a GB Operator, GBxCart RW or similar, using the "backup save" option.
+              <div class="step__num accent-gold">01</div>
+              <h3 class="step__title" data-i18n="ylStep1Title">Get your save file</h3>
+              <p class="step__body" data-i18n="ylStep1Body">
+                On an emulator the .sav sits next to your ROM (mGBA, BGB, SameBoy). On a flash cart or real cartridge,
+                dump it with a GB Operator, GBxCart RW or similar.
               </p>
             </div>
             <div class="step">
-              <div class="step__num accent-lime">02</div>
-              <h3 class="step__title" data-i18n="mtStep2Title">Drop it in</h3>
-              <p class="step__body" data-i18n="mtStep2Body">
-                The file is read locally and checked: exact size, the Camelot header in both save halves, and a sane
-                directory. If anything looks off, the tool refuses instead of guessing.
+              <div class="step__num accent-gold">02</div>
+              <h3 class="step__title" data-i18n="ylStep2Title">Drop it in</h3>
+              <p class="step__body" data-i18n="ylStep2Body">
+                The file is read locally and checked: exact size, a readable trainer and rival name, a sane bag and
+                valid BCD wallet fields. The checksum is reported, not enforced, and a broken one gets fixed on the way
+                out.
               </p>
             </div>
             <div class="step">
-              <div class="step__num accent-lime">03</div>
-              <h3 class="step__title" data-i18n="mtStep3Title">Hit unlock</h3>
-              <p class="step__body" data-i18n="mtStep3Body">
-                Sixteen bytes change: the unlock markers and the transfer block, mirrored across the primary and
-                backup halves so each one still passes its own checksum. Save counters and profiles are untouched.
+              <div class="step__num accent-gold">03</div>
+              <h3 class="step__title" data-i18n="ylStep3Title">Edit the player block</h3>
+              <p class="step__body" data-i18n="ylStep3Body">
+                Name, ID, money, coins, the eight badge bits and the eleven town-visited bits. Every pending change is
+                listed with its offset before you download anything.
               </p>
             </div>
             <div class="step">
-              <div class="step__num accent-lime">04</div>
-              <h3 class="step__title" data-i18n="mtStep4Title">Put it back</h3>
-              <p class="step__body" data-i18n="mtStep4Body">
-                Download the patched file, keep your original as a backup, and replace it. Next boot, Yoshi, Wario,
-                Waluigi and Bowser are on the character select, and the minigames are open.
+              <div class="step__num accent-gold">04</div>
+              <h3 class="step__title" data-i18n="ylStep4Title">Put it back</h3>
+              <p class="step__body" data-i18n="ylStep4Body">
+                Download the edited file, keep your original as a backup, and swap it in. Next boot the game loads it
+                without the "file data is destroyed" screen.
               </p>
             </div>
           </div>
@@ -493,69 +496,82 @@
         <section class="section why">
           <div class="why__prose">
             <div class="section__head">
-              <span class="eyebrow eyebrow--red" data-i18n="mtWhyEyebrow">WHY THIS EXISTS</span>
+              <span class="eyebrow eyebrow--red" data-i18n="ylWhyEyebrow">WHY THIS EXISTS</span>
               <span class="rule"></span>
             </div>
-            <h2 class="section__title section__title--sm" data-i18n="mtWhyTitle">
-              Content locked behind hardware nobody has
+            <h2 class="section__title section__title--sm" data-i18n="ylWhyTitle">
+              Built for Yellow Legacy, not for vanilla
             </h2>
-            <p class="why__p" data-i18n="mtWhyP1">
-              To unlock those four characters legitimately you need an N64, the N64 Mario Tennis cartridge, a Transfer
-              Pak and the GBC cartridge. All four, at once. No cheat code exists, and the re-releases never fixed it.
-              For most people the content is simply unreachable.
+            <p class="why__p" data-i18n="ylWhyP1">
+              PKHeX is excellent, but it targets the official games. A romhack save is not what it was written for, and
+              Yellow Legacy genuinely moves things: its bag holds 59 items instead of 20, which pushes money, badges,
+              the trainer ID and coins 78 bytes further into the file. Point a vanilla editor at one and it writes
+              confidently to the wrong address.
             </p>
-            <p class="why__p why__p--soft" data-i18n="mtWhyP2">
-              So the save format got reverse-engineered from real cartridge dumps, since it was documented nowhere.
-              The patch touches only the unlock markers and the transfer block, both halves of the save pass their own
-              checksums afterwards, and removing the unlock restores the original byte for byte.
+            <p class="why__p why__p--soft" data-i18n="ylWhyP2">
+              So these offsets were derived from the Yellow Legacy source itself — assembled and linked to a symbol
+              file, not copied from a Gen 1 reference. Right now it covers the player block. The goal is the kind of
+              coverage you would expect from PKHeX: party and box Pokémon, items and the rest, added one verified
+              field at a time rather than all at once and half-checked.
             </p>
           </div>
 
           <div class="why__bytes">
-            <div class="eyebrow eyebrow--blue" data-i18n="mtBytesEyebrow">UNDER THE HOOD</div>
-            <p class="why__bytes-lead" data-i18n="mtBytesLead">For the technically curious, this is the whole diff:</p>
+            <div class="eyebrow eyebrow--blue" data-i18n="ylBytesEyebrow">UNDER THE HOOD</div>
+            <p class="why__bytes-lead" data-i18n="ylBytesLead">Every byte this editor can touch, and nothing else:</p>
             <div class="bytes">
               <table class="bytes__table">
                 <thead>
                   <tr>
-                    <th scope="col" data-i18n="mtBytesOffset">OFFSET</th>
-                    <th scope="col" data-i18n="mtBytesWhat">WHAT IT IS</th>
-                    <th scope="col" class="bytes__val" data-i18n="mtBytesValue">VALUE</th>
+                    <th scope="col" data-i18n="ylColOffset">OFFSET</th>
+                    <th scope="col" data-i18n="ylBytesWhat">WHAT IT IS</th>
+                    <th scope="col" class="bytes__val" data-i18n="ylBytesFormat">FORMAT</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="accent-lime">0x0041</td>
-                    <td data-i18n="mtByte1">N64 character bitmask</td>
-                    <td class="bytes__val accent-green">00→3C</td>
+                    <td class="accent-muted">0x2598</td>
+                    <td data-i18n="ylRow1">player name (Gen 1 text)</td>
+                    <td class="bytes__val accent-muted">11 B</td>
                   </tr>
                   <tr>
-                    <td class="accent-lime">0x0047</td>
-                    <td data-i18n="mtByte2">transfer-done flag</td>
-                    <td class="bytes__val accent-green">00→02</td>
+                    <td class="accent-gold">0x2641</td>
+                    <td data-i18n="ylRow2">money, 3 bytes BCD</td>
+                    <td class="bytes__val accent-muted">BCD</td>
                   </tr>
                   <tr>
-                    <td class="accent-lime">0x0110</td>
-                    <td data-i18n="mtByte3">directory record in use</td>
-                    <td class="bytes__val accent-green">00→01</td>
+                    <td class="accent-gold">0x2650</td>
+                    <td data-i18n="ylRow3">badges, bit 0 = Boulder</td>
+                    <td class="bytes__val accent-muted">bits</td>
                   </tr>
                   <tr>
-                    <td class="accent-lime">0x0116</td>
-                    <td data-i18n="mtByte4">record checksum</td>
-                    <td class="bytes__val accent-green">→01C9</td>
+                    <td class="accent-gold">0x2653</td>
+                    <td data-i18n="ylRow4">trainer ID</td>
+                    <td class="bytes__val accent-muted">u16 BE</td>
                   </tr>
                   <tr>
-                    <td class="accent-lime">0x1800</td>
-                    <td data-i18n="mtByte5">transfer block (512 B)</td>
-                    <td class="bytes__val accent-green">ED D5 … 07</td>
+                    <td class="accent-gold">0x289E</td>
+                    <td data-i18n="ylRow5">Game Corner coins</td>
+                    <td class="bytes__val accent-muted">BCD</td>
+                  </tr>
+                  <tr>
+                    <td class="accent-muted">0x29B7</td>
+                    <td data-i18n="ylRow6">towns visited (Fly)</td>
+                    <td class="bytes__val accent-muted">bits</td>
+                  </tr>
+                  <tr>
+                    <td class="accent-muted">0x3523</td>
+                    <td data-i18n="ylRow7">bank 1 checksum</td>
+                    <td class="bytes__val accent-green">auto</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p class="why__bytes-foot" data-i18n="mtBytesFoot">
-              Every marker and the transfer block are mirrored in the backup half at 0x2000, because each half
-              checksums its own copy. Save counters, profile blocks and the non-checksum records from 0x3C0 are never
-              written.
+            <p class="why__bytes-foot" data-i18n="ylBytesFoot">
+              The four gold offsets are the ones Yellow Legacy shifts; the towns, the gym mirror and the checksum sit
+              where vanilla keeps them, because the hack reclaims 78 bytes of filler further down. The badge mask is
+              also mirrored to 0x29D6 (wBeatGymFlags), which the game reads for gym statues and NPC text. Box banks 2
+              and 3 and their checksums are never touched.
             </p>
           </div>
         </section>
@@ -563,30 +579,29 @@
         <!-- FAQ -->
         <section class="section">
           <div class="section__head">
-            <span class="eyebrow eyebrow--lime" data-i18n="mtFaqEyebrow">GOOD TO KNOW</span>
+            <span class="eyebrow eyebrow--gold" data-i18n="ylFaqEyebrow">GOOD TO KNOW</span>
             <span class="rule"></span>
           </div>
           <div class="faq">
             <div class="faq__card">
-              <h3 class="faq__q" data-i18n="mtFaq1Q">Can I undo it?</h3>
-              <p class="faq__a" data-i18n="mtFaq1A">
-                Yes. "Remove unlock" reverses the patch and produces a byte-identical pre-unlock save. It also repairs
-                a half-applied "partial" state.
+              <h3 class="faq__q" data-i18n="ylFaq1Q">Will this corrupt my save?</h3>
+              <p class="faq__a" data-i18n="ylFaq1A">
+                It writes six fields and one checksum byte, nothing else. Still: the download is a separate file, so
+                keep your original until you have booted the edited one.
               </p>
             </div>
             <div class="faq__card">
-              <h3 class="faq__q" data-i18n="mtFaq2Q">Does it work on a real cartridge?</h3>
-              <p class="faq__a" data-i18n="mtFaq2A">
-                It is built from real cartridge dumps and the patched save passes the game's own checksums, but it
-                has not been compared against a hardware Transfer Pak session. Keep your original before you write the
-                patched .sav back with your flasher.
+              <h3 class="faq__q" data-i18n="ylFaq2Q">Does it work on vanilla Yellow, Red or Blue?</h3>
+              <p class="faq__a" data-i18n="ylFaq2A">
+                No, and it refuses them on purpose rather than quietly writing to the wrong offsets. For the official
+                games use PKHeX, which is built and tested for them.
               </p>
             </div>
             <div class="faq__card">
-              <h3 class="faq__q" data-i18n="mtFaq3Q">Will it corrupt my progress?</h3>
-              <p class="faq__a" data-i18n="mtFaq3A">
-                It only touches the N64 unlock markers and the transfer area. Still: keep a copy of the original file
-                before you overwrite anything.
+              <h3 class="faq__q" data-i18n="ylFaq3Q">Why is my checksum already wrong?</h3>
+              <p class="faq__a" data-i18n="ylFaq3A">
+                Usually because another tool edited the save and did not fix it, or the dump is partial. This editor
+                recomputes it on download either way, which repairs the "file data is destroyed" screen.
               </p>
             </div>
           </div>
@@ -724,9 +739,9 @@
             <a class="site-footer__brand" href="/tools/">← COOL TOOLS</a>
             <div class="site-footer__note">© 2026 Erick Takeshi</div>
           </div>
-          <div class="site-footer__legal site-footer__legal--wide" data-i18n="mtFooterLegal">
-            Fan tool · Mario Tennis © Nintendo/Camelot. Not affiliated. Runs entirely in your browser. No file is
-            uploaded.
+          <div class="site-footer__legal site-footer__legal--wide" data-i18n="ylFooterLegal">
+            Fan tool · Pokémon © Nintendo/Creatures/GAME FREAK. Yellow Legacy is a fan romhack. Not affiliated. Runs
+            entirely in your browser, no file is uploaded.
           </div>
         </footer>
       </div>
@@ -734,23 +749,17 @@
       <!-- The music dock is appended here at runtime by js/player/dock-markup.js. -->
     </div>
 
-    <!-- Filled by patcher-ui.js and inserted into the live regions above. -->
-    <template id="mtNoticeTpl">
+    <!-- Filled by editor-ui.js and inserted into the live regions above. -->
+    <template id="ylNoticeTpl">
       <div class="notice">
         <span class="notice__badge" aria-hidden="true"></span>
         <span class="notice__text">
           <span class="notice__title"></span>
           <span class="notice__body"></span>
-          <span class="notice__roster" hidden>
-            <img src="https://cdn.ericktakeshi.com.br/assets/body-yoshi.png" alt="" aria-hidden="true" />
-            <img src="https://cdn.ericktakeshi.com.br/assets/body-wario.png" alt="" aria-hidden="true" />
-            <img src="https://cdn.ericktakeshi.com.br/assets/body-waluigi.png" alt="" aria-hidden="true" />
-            <img src="https://cdn.ericktakeshi.com.br/assets/body-bowser.png" alt="" aria-hidden="true" />
-          </span>
         </span>
       </div>
     </template>
 
-    <script type="module" src="/js/tools/mario-tennis/page.js"></script>
+    <script type="module" src="/js/tools/yellow-legacy/page.js"></script>
   </body>
 </html>

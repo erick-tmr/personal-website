@@ -14,6 +14,8 @@
   --lime: #9bbc0f;
   --lime-soft: #dceac0;
   --gold: #f5d33f;
+  /* Game Boy cartridge amber — the Yellow Legacy tool and its hub card. */
+  --amber: #e3b341;
   --gb-screen: #8bac0f;
   --green-bright: #6df0b1;
 
@@ -168,6 +170,12 @@ img { max-width: 100%; }
   position: fixed;
   inset: 0;
   pointer-events: none;
+}
+.bg-glow--gold {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -5%, rgba(227, 179, 65, 0.10), transparent 62%),
+    radial-gradient(ellipse 60% 45% at 2% 100%, rgba(53, 214, 138, 0.10), transparent 62%),
+    radial-gradient(ellipse 60% 45% at 98% 100%, rgba(46, 111, 219, 0.11), transparent 62%);
 }
 .bg-scanlines {
   z-index: 1;
@@ -451,6 +459,8 @@ img { max-width: 100%; }
 .accent-blue { color: var(--blue); }
 .accent-red { color: var(--red); }
 .accent-lime { color: var(--lime); }
+.accent-gold { color: var(--amber); }
+.accent-muted { color: var(--muted-2); }
 
 /* ---- Buttons ----------------------------------------------------------- */
 .btn {
@@ -477,6 +487,8 @@ img { max-width: 100%; }
 /* The only .btn that is always a <button>, so it carries the element resets. */
 .btn--gold { border: 0; cursor: pointer; color: var(--ink); background: var(--gold); }
 .btn--gold:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(245, 211, 63, 0.32); }
+.btn--amber { color: #1c1405; background: var(--amber); }
+.btn--amber:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(227, 179, 65, 0.32); }
 /* The copy landed. The button stops asking and becomes the receipt, which is
    why it goes green rather than showing a notice somewhere else on the card. */
 .btn--gold.is-copied { background: var(--green); }
@@ -487,6 +499,20 @@ img { max-width: 100%; }
 .btn--ghost-red:hover,
 .btn--email:hover { border-color: var(--red); color: var(--red); }
 .btn[disabled] { opacity: .34; cursor: not-allowed; transform: none; box-shadow: none; }
+
+/* A destructive action that should read as available but not inviting. */
+.btn--outline-red { color: #ff9d8c; background: transparent; border: 1px solid var(--red); }
+.btn--outline-red:hover:not([disabled]) { background: rgba(224, 69, 47, 0.12); }
+
+/* The way out of a flow — present, deliberately quiet. */
+.btn--quiet { color: var(--muted-2); background: transparent; border: 1px solid var(--border-soft); }
+.btn--quiet:hover { border-color: var(--red); color: var(--red); }
+
+/* The primary action in a machine panel: it earns a shadow. */
+.btn--lift { box-shadow: 0 10px 24px rgba(53, 214, 138, 0.24); }
+
+/* Inline with a heading rather than in a button row. */
+.btn--tiny { font-size: 11px; font-weight: 400; padding: 7px 11px; }
 
 /* Buttons carrying a pixel-art badge (email, GitHub). */
 .btn--icon { gap: 10px; padding: 9px 15px; }
@@ -1011,6 +1037,8 @@ img { max-width: 100%; }
 .dot--blue-deep.dot--glow { box-shadow: 0 0 8px rgba(46, 111, 219, 0.55); }
 .dot--red.dot--glow { box-shadow: 0 0 8px rgba(224, 69, 47, 0.5); }
 .dot--lime.dot--glow { box-shadow: 0 0 8px rgba(155, 188, 15, 0.5); }
+.dot--gold { background: var(--amber); }
+.dot--gold.dot--glow { box-shadow: 0 0 8px rgba(227, 179, 65, 0.5); }
 .panel__title { font-family: var(--pixel); font-size: 10px; color: var(--heading); letter-spacing: 1px; }
 
 .ride {
@@ -1476,6 +1504,8 @@ a.tool-card:hover {
 }
 .roster__chip img { display: block; width: 24px; height: 24px; border-radius: 3px; object-fit: cover; image-rendering: pixelated; }
 .roster__chip--plain { padding: 5px 9px; color: var(--text-dim); background: var(--panel-3); border-color: var(--border); }
+.roster__chip--gold { padding: 5px 9px; color: #f5e6c0; background: rgba(227, 179, 65, 0.14); border-color: #8a6d1f; }
+.roster__chip--sky { padding: 5px 9px; color: #cfe0f7; background: rgba(46, 111, 219, 0.16); border-color: var(--border); }
 
 .requests {
   margin-top: 44px;
@@ -1589,6 +1619,7 @@ a.tool-card:hover {
 .machine__led[data-tone="loaded"] { background: var(--lime); box-shadow: 0 0 9px var(--lime); }
 .machine__led[data-tone="patched"] { background: var(--green); box-shadow: 0 0 9px var(--green); }
 .machine__led[data-tone="error"] { background: var(--red); box-shadow: 0 0 9px var(--red); }
+.machine__led[data-tone="edited"] { background: var(--amber); box-shadow: 0 0 9px var(--amber); }
 .machine__name { font-family: var(--pixel); font-size: 8px; color: var(--heading); letter-spacing: 1px; }
 .machine__status { margin-left: auto; font-family: var(--pixel); font-size: 7px; color: var(--muted); letter-spacing: 1px; }
 .machine__body { padding: 20px; }
@@ -1726,7 +1757,13 @@ a.tool-card:hover {
 .cell__value { font-family: var(--pixel); font-size: 11px; color: var(--heading); margin-top: 8px; line-height: 1.6; }
 .cell__value[data-tone="green"] { color: var(--green); }
 .cell__value[data-tone="red"] { color: var(--red); }
-.cell__value[data-tone="muted"] { color: var(--muted-3); }
+.cell__value[data-tone="muted"],
+.cell__value[data-tone="idle"] { color: var(--muted-3); }
+.cell__value--text { font-family: var(--mono); font-size: 12.5px; font-weight: 700; }
+.cell__note { font-size: 11px; color: var(--muted-4); margin-top: 7px; line-height: 1.55; }
+
+/* A side panel is one column wide; its cells stack rather than share a row. */
+.readout__cells--stack { grid-template-columns: 1fr; }
 
 /* -- checksum audit -- */
 .audit { margin-top: 14px; }
@@ -1853,6 +1890,186 @@ a.tool-card:hover {
 .faq__a { margin: 9px 0 0; font-size: 12.5px; color: var(--tone-soft); line-height: 1.7; text-wrap: pretty; }
 
 .site-footer__legal--wide { max-width: 400px; }
+
+/* -- actions -- */
+/* Used by both save tools: the primary action, its undo, and the way out,
+   pushed apart so "load another file" never sits next to "download". */
+.actions { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.actions__spacer { flex: 1; min-width: 8px; }
+.actions__hint { margin: 11px 0 0; font-size: 11.5px; color: var(--muted); }
+.download__name { margin: 11px 0 0; font-size: 11.5px; color: var(--muted); }
+
+/* ---- Tool · Yellow Legacy save editor ---------------------------------- */
+/* Tints used only by this tool stay scoped here rather than in :root, so the
+   global palette remains the site palette. --amber is the exception: the hub
+   card and the shared accent utilities use it too, so it lives with the rest. */
+.cartridge--yellow,
+.tool-card--gold,
+.dropzone--gold,
+.trainer-grid,
+.toggles,
+.diff {
+  --amber-ink: #1c1405;
+  --amber-text: #f0dcae;
+  --amber-chip: #f5e6c0;
+  --amber-line: #8a6d1f;
+}
+
+/* -- cartridge -- */
+.cartridge--yellow {
+  border-color: var(--amber);
+  background: linear-gradient(155deg, rgba(227, 179, 65, 0.24), rgba(31, 111, 102, 0.26));
+}
+/* The Yellow Legacy title screen is mostly white, so the bezel backing is too
+   — a green Game Boy screen behind it would tint the artwork. */
+.cartridge--yellow .cartridge__screen { background: #ffffff; box-shadow: none; }
+.cartridge--yellow .cartridge__screen img { object-fit: contain; image-rendering: pixelated; }
+.cartridge--yellow .cartridge__label { color: var(--amber-text); }
+.tool-card--gold:hover { border-color: var(--amber); }
+
+.dropzone--gold { border-color: var(--amber-line); background: rgba(227, 179, 65, 0.05); }
+.dropzone--gold .dropzone__cart { border-color: var(--amber-line); background: rgba(227, 179, 65, 0.10); }
+.dropzone--gold .dropzone__cart-screen { background: var(--amber-line); }
+.dropzone--gold .dropzone__cta { color: var(--amber-ink); background: var(--amber); }
+/* .is-drag already turns the zone green; keep that shared affordance. */
+
+/* -- trainer fields -- */
+.trainer-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field__label { font-size: 11px; color: var(--muted-4); letter-spacing: 1px; }
+.field__row { display: flex; gap: 8px; }
+.field__input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--heading);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.field__input:focus { border-color: var(--amber); outline: none; }
+.field__row .field__input { flex: 1; }
+/* The spinners are noise at this size but removing them entirely would cost
+   the pointer user a control, so they are only dimmed. */
+.field__input[type="number"]::-webkit-outer-spin-button,
+.field__input[type="number"]::-webkit-inner-spin-button { opacity: .35; }
+.field__roll {
+  flex: 0 0 auto;
+  padding: 0 14px;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--amber);
+  background: var(--panel-3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color .15s, background .15s;
+}
+.field__roll:hover { border-color: var(--amber); background: #1c2a12; }
+.field__roll-die { display: block; width: 17px; height: 17px; }
+.field__roll-die rect { fill: none; stroke: currentColor; stroke-width: 1.6; }
+.field__roll-die circle { fill: currentColor; }
+.field__hint { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+
+/* -- badge / fly toggles -- */
+.toggles { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border-soft); }
+.toggles__head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.toggles__title { margin: 0; font-family: var(--pixel); font-size: 8px; letter-spacing: 1px; }
+.toggles__count { font-size: 11px; color: var(--muted); }
+.toggles__spacer { flex: 1; min-width: 10px; }
+.toggles__note { margin: 12px 0 0; font-size: 11.5px; color: var(--muted); line-height: 1.6; }
+
+.toggle-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 9px;
+}
+.toggle-chip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 11px;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted-4);
+  background: var(--panel-2);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  transition: border-color .14s, background .14s, color .14s;
+}
+.toggle-chip__name { flex: 1; }
+.toggle-chip__city { font-size: 10px; font-weight: 400; color: var(--muted); }
+/* The dot is the state, so it has to survive a forced-colours mode: it carries
+   a border as well as a fill. */
+.toggle-chip__dot {
+  flex: 0 0 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  border: 1px solid #3a5c48;
+}
+.toggle-chip[aria-pressed="true"] { color: var(--amber-chip); }
+.toggle-chip--badge[aria-pressed="true"] { border-color: var(--amber); background: rgba(227, 179, 65, 0.13); }
+.toggle-chip--badge[aria-pressed="true"] .toggle-chip__dot {
+  background: var(--amber);
+  border-color: var(--amber);
+  box-shadow: 0 0 8px rgba(227, 179, 65, 0.6);
+}
+.toggle-chip--town[aria-pressed="true"] { border-color: var(--blue); background: rgba(46, 111, 219, 0.14); color: #cfe0f7; }
+.toggle-chip--town[aria-pressed="true"] .toggle-chip__dot {
+  background: var(--blue);
+  border-color: var(--blue);
+  box-shadow: 0 0 8px rgba(90, 162, 245, 0.6);
+}
+.toggle-chip:hover { border-color: var(--border); }
+
+/* -- pending changes -- */
+/* Dashed, because this is a preview of what will be written rather than part
+   of the form itself. */
+.diff { margin-top: 24px; padding-top: 18px; border-top: 1px dashed var(--border-soft); }
+.diff__head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.diff__title { margin: 0; font-family: var(--pixel); font-size: 8px; color: var(--muted); letter-spacing: 1px; }
+.diff__count { font-family: var(--pixel); font-size: 9px; color: var(--muted-3); }
+.diff__count[data-tone="edited"] { color: var(--amber); }
+.diff__panel {
+  margin-top: 12px;
+  border: 1px solid var(--border-soft);
+  border-radius: 7px;
+  overflow: hidden;
+  background: var(--bg);
+}
+.diff__table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+.diff__table th {
+  padding: 9px 13px;
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: .5px;
+  background: var(--panel-2);
+  border-bottom: 1px solid var(--border-soft);
+}
+.diff__table td { padding: 10px 13px; color: var(--text-dim); border-bottom: 1px solid var(--panel-3); }
+.diff__table tr:last-child td { border-bottom: 0; }
+.diff__offset { font-family: var(--mono); color: var(--amber); white-space: nowrap; }
+.diff__change { text-align: right; white-space: nowrap; }
+.diff__before { color: var(--muted-4); }
+.diff__after { color: var(--green); }
 
 /* ---- Games hub (/games/) ----------------------------------------------- */
 /* The hero is a banner panel with a thunderstorm behind it: the console art
@@ -2548,6 +2765,11 @@ a.games-index__row:hover { opacity: .75; }
 
 /* ---- Responsive -------------------------------------------------------- */
 @media (max-width: 600px) {
+  .toggle-grid { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); }
+  .diff__table { font-size: 11px; }
+  .diff__table th:nth-child(2),
+  .diff__table td:nth-child(2) { display: none; }
+  .diff__change { text-align: left; }
   .container { padding: 0 16px 80px; }
   .player { right: 16px; bottom: 16px; width: calc(100vw - 32px); }
 
