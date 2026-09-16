@@ -79,7 +79,7 @@
             <nav class="site-nav" aria-label="Sections">
               <a class="site-nav__link" href="/">HOME</a>
               <a class="site-nav__link" href="/games/">GAMES<span class="site-nav__count">2</span></a>
-              <a class="site-nav__link is-active" href="/tools/" aria-current="page">COOL TOOLS<span class="site-nav__count">1</span></a>
+              <a class="site-nav__link is-active" href="/tools/" aria-current="page">COOL TOOLS<span class="site-nav__count">2</span></a>
             </nav>
           </div>
           <div class="site-header__right">
@@ -150,6 +150,11 @@
                 <span class="menu-sub__branch" aria-hidden="true">└</span>
                 <span class="menu-sub__name">Mario Tennis Save Patcher</span>
                 <span class="menu-sub__tag">N64</span>
+              </a>
+              <a class="menu-sub" href="/tools/pokemon-yellow-legacy-save-editor/">
+                <span class="menu-sub__branch" aria-hidden="true">└</span>
+                <span class="menu-sub__name">Yellow Legacy Save Editor</span>
+                <span class="menu-sub__tag">GB</span>
               </a>
             </div>
 
@@ -305,6 +310,70 @@
               <div class="tool-card__cta">
                 <span class="btn btn--green"><span data-i18n="toolsCtaOpen">Open the patcher</span> ▸</span>
                 <span class="hint" data-i18n="toolsCardHint">accepts a 32 KiB .sav (USA)</span>
+              </div>
+            </div>
+          </a>
+        </section>
+
+        <!-- TOOL 02 -->
+        <section class="section">
+          <div class="section__head">
+            <span class="eyebrow eyebrow--gold">TOOL ▸ 02 · GAME BOY</span>
+            <span class="rule"></span>
+            <span class="eyebrow eyebrow--green">● LIVE</span>
+          </div>
+
+          <a class="tool-card tool-card--gold" href="/tools/pokemon-yellow-legacy-save-editor/">
+            <div class="tool-card__art">
+              <div class="cartridge cartridge--yellow cartridge--sm" aria-hidden="true">
+                <div class="cartridge__notch"></div>
+                <div class="cartridge__screen">
+                  <img src="https://cdn.ericktakeshi.com.br/assets/yellow-legacy-title.png" alt="" />
+                  <div class="cartridge__scan"></div>
+                </div>
+                <div class="cartridge__label">DMG-AYWE-USA</div>
+              </div>
+            </div>
+
+            <div class="tool-card__body">
+              <h2 class="tool-card__title">Yellow Legacy <span class="accent-gold">Save Editor</span></h2>
+              <p class="tool-card__lead" data-i18n="toolsYlLead">
+                A save editor for Pokémon Yellow Legacy that runs in the browser instead of on Windows. Edit the
+                trainer block — name, ID, money, Game Corner coins, gym badges and the towns Fly can reach — at the
+                offsets the romhack actually uses, not the vanilla ones. The bank 1 checksum is recalculated on the way
+                out.
+              </p>
+
+              <div class="tool-card__unlocks">
+                <div class="eyebrow" data-i18n="toolsYlEditsLabel">EDITS</div>
+                <div class="roster">
+                  <span class="roster__chip roster__chip--gold" data-i18n="toolsYlChipName">OT name</span>
+                  <span class="roster__chip roster__chip--gold" data-i18n="toolsYlChipId">Trainer ID</span>
+                  <span class="roster__chip roster__chip--gold" data-i18n="toolsYlChipMoney">Money</span>
+                  <span class="roster__chip roster__chip--gold" data-i18n="toolsYlChipCoins">Coins</span>
+                  <span class="roster__chip roster__chip--gold" data-i18n="toolsYlChipBadges">8 badges</span>
+                  <span class="roster__chip roster__chip--sky" data-i18n="toolsYlChipFly">11 Fly points</span>
+                </div>
+              </div>
+
+              <div class="stats tool-card__stats">
+                <div class="stat">
+                  <div class="stat__value accent-gold">6</div>
+                  <div class="stat__label" data-i18n="toolsYlStatFields">fields written</div>
+                </div>
+                <div class="stat">
+                  <div class="stat__value accent-red">0</div>
+                  <div class="stat__label" data-i18n="toolsStatUploads">uploads</div>
+                </div>
+                <div class="stat">
+                  <div class="stat__value accent-blue">AUTO</div>
+                  <div class="stat__label" data-i18n="toolsYlStatChecksum">checksum repair</div>
+                </div>
+              </div>
+
+              <div class="tool-card__cta">
+                <span class="btn btn--amber"><span data-i18n="toolsYlCta">Open the editor</span> ▸</span>
+                <span class="hint" data-i18n="toolsYlHint">Yellow Legacy save files only</span>
               </div>
             </div>
           </a>

@@ -19,7 +19,7 @@ export const DICT = {
     navGamesName: "Games",
     navGamesDesc: "2 Game Boy builds & patches",
     navToolsName: "Cool Tools",
-    navToolsDesc: "small utilities that fix old games",
+    navToolsDesc: "2 save tools that fix old games",
     navBlogName: "Field Notes",
     navBlogDesc: "long-form writing on backend craft",
 
@@ -45,7 +45,7 @@ export const DICT = {
     cardGamesMeta: "2 builds · GBC",
     cardToolsDesc:
       "Small browser utilities that fix things old games got wrong. Starting with a Mario Tennis save patcher.",
-    cardToolsMeta: "1 tool · N64",
+    cardToolsMeta: "2 tools · N64 & Game Boy",
     cardBlogName: "FIELD NOTES",
     cardBlogDesc:
       "Long-form writing on backend craft: the systems, the trade-offs and the lessons that only show up in production.",
@@ -75,6 +75,21 @@ export const DICT = {
     toolsStatReversible: "reversible",
     toolsCtaOpen: "Open the patcher",
     toolsCardHint: "accepts a 32 KiB .sav (USA)",
+
+    // Cool Tools hub · tool 02 card
+    toolsYlLead:
+      "A save editor for Pokémon Yellow Legacy that runs in the browser instead of on Windows. Edit the trainer block — name, ID, money, Game Corner coins, gym badges and the towns Fly can reach — at the offsets the romhack actually uses, not the vanilla ones. The bank 1 checksum is recalculated on the way out.",
+    toolsYlEditsLabel: "EDITS",
+    toolsYlChipName: "OT name",
+    toolsYlChipId: "Trainer ID",
+    toolsYlChipMoney: "Money",
+    toolsYlChipCoins: "Coins",
+    toolsYlChipBadges: "8 badges",
+    toolsYlChipFly: "11 Fly points",
+    toolsYlStatFields: "fields written",
+    toolsYlStatChecksum: "checksum repair",
+    toolsYlCta: "Open the editor",
+    toolsYlHint: "Yellow Legacy save files only",
     toolsRequestEyebrow: "REQUESTS",
     toolsRequestLead:
       "Know some retro content locked behind hardware nobody owns anymore? Tell me. Reverse-engineering save formats is my kind of weekend.",
@@ -194,7 +209,7 @@ export const DICT = {
     navGamesName: "Games",
     navGamesDesc: "2 builds e patches de Game Boy",
     navToolsName: "Cool Tools",
-    navToolsDesc: "utilitários que consertam jogos antigos",
+    navToolsDesc: "2 ferramentas de save para jogos antigos",
     navBlogName: "Anotações",
     navBlogDesc: "textos longos sobre backend de verdade",
 
@@ -220,7 +235,7 @@ export const DICT = {
     cardGamesMeta: "2 builds · GBC",
     cardToolsDesc:
       "Utilitários de navegador que consertam o que jogos antigos erraram. Começando pelo patcher de save do Mario Tennis.",
-    cardToolsMeta: "1 ferramenta · N64",
+    cardToolsMeta: "2 ferramentas · N64 e Game Boy",
     cardBlogName: "ANOTAÇÕES",
     cardBlogDesc:
       "Textos longos sobre backend de verdade: os sistemas, os trade-offs e as lições que só aparecem em produção.",
@@ -250,6 +265,21 @@ export const DICT = {
     toolsStatReversible: "reversível",
     toolsCtaOpen: "Abrir o patcher",
     toolsCardHint: "aceita um .sav de 32 KiB (USA)",
+
+    // Cool Tools hub · tool 02 card
+    toolsYlLead:
+      "Um editor de save para Pokémon Yellow Legacy que roda no navegador em vez de no Windows. Edite o bloco do treinador — nome, ID, dinheiro, fichas do Game Corner, insígnias e as cidades que o Fly alcança — nos offsets que o romhack realmente usa, não nos do jogo original. O checksum do banco 1 é recalculado na saída.",
+    toolsYlEditsLabel: "EDITA",
+    toolsYlChipName: "Nome (OT)",
+    toolsYlChipId: "ID",
+    toolsYlChipMoney: "Dinheiro",
+    toolsYlChipCoins: "Fichas",
+    toolsYlChipBadges: "8 insígnias",
+    toolsYlChipFly: "11 pontos de Fly",
+    toolsYlStatFields: "campos escritos",
+    toolsYlStatChecksum: "correção de checksum",
+    toolsYlCta: "Abrir o editor",
+    toolsYlHint: "apenas saves de Yellow Legacy",
     toolsRequestEyebrow: "PEDIDOS",
     toolsRequestLead:
       "Conhece algum conteúdo retrô trancado atrás de hardware que ninguém mais tem? Me conta. Engenharia reversa de save é meu tipo de fim de semana.",

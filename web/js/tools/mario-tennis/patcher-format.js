@@ -12,6 +12,8 @@
    the page can switch language without recomputing any of this.
    =========================================================================== */
 
+export { interpolate } from "../../util/interpolate.js";
+
 const NO_VALUE = "-";
 
 /**
@@ -145,18 +147,6 @@ export function patchKeys(patched) {
 export function outputFileName(inputName, mode) {
   const base = (inputName || "mario-tennis.sav").replace(/\.sav$/i, "");
   return (base || "mario-tennis") + "-" + mode + ".sav";
-}
-
-/**
- * Fill {placeholders} in a translated string.
- * @param {string} template
- * @param {Record<string, string|number>} vars
- */
-export function interpolate(template, vars) {
-  if (!template) return "";
-  return template.replace(/\{(\w+)\}/g, (whole, key) =>
-    Object.prototype.hasOwnProperty.call(vars, key) ? String(vars[key]) : whole
-  );
 }
 
 /** Profile names for the inspector, blanks dropped. */
