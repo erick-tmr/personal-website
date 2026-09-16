@@ -1,7 +1,7 @@
 {
   "name": "Erick Takeshi",
   "short_name": "Erick.TMR",
-  "description": "Erick Takeshi — link-in-bio / self profile.",
+  "description": "Erick Takeshi — personal website.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#0a130e",

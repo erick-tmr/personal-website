@@ -1,6 +1,6 @@
-# link-in-bio-self-profile
+# personal-website
 
-Personal Link in Bio profile — a static page (HTML + CSS + vanilla ES modules).
+Personal website — a static page (HTML + CSS + vanilla ES modules).
 
 ## Project layout
 

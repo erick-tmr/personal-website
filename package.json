@@ -1,7 +1,7 @@
 {
-  "name": "link-in-bio-self-profile",
+  "name": "personal-website",
   "version": "1.0.0",
-  "description": "Personal Link in Bio profile — static site with a minify-only asset pipeline.",
+  "description": "Personal website — static site with a minify-only asset pipeline.",
   "private": true,
   "type": "module",
   "scripts": {
